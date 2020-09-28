@@ -19,8 +19,12 @@ class Stock
 		
 	int choice=sc.nextInt();
 			
-	if(choice==1)
+	switch(choice)
 	{
+	case 0:
+		System.exit(0);
+
+	case 1:
 		System.out.println("You have entered one");
 		System.out.println("Enter the number of products you wants to enter: ");
 		num=sc.nextInt();
@@ -48,12 +52,9 @@ class Stock
 			System.out.println("Enter Price of Product: ");
 			price[i]=sc.nextInt();
 			
-		}	
-			
+		}			
 	}
 	
-	else
-		System.exit(0);
 
 	}
 
