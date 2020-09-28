@@ -1,3 +1,5 @@
+//1.Implement the concept of control statement and array
+//2.Implement the concept of class,data members,member functions and access specifier.
 import java.util.*;
 import java.util.Scanner;
 
