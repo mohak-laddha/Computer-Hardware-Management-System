@@ -83,7 +83,6 @@ public class Shop
 		Stock st = new Stock();
 
 		st.read();
-		st.display();
-				
+		st.display();			
 	}
 }
