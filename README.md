@@ -1,7 +1,9 @@
 # Computer-Hardware-Management-System
 
-Shop.java contails Lab Q1 and Q2
+Q1 & Q2 Shop.java 
 
-Shop1.java Contains Lab Q3 Constructor and Function Overloading
+Q3_Shop1.java Contains Lab Q3 Constructor and Function Overloading
 
-Shop4.java contains use of static keyword
+Q4 Shop4.java contains use of static keyword
+
+Q7 Implementing the concept of Inheritance, super, abstract, and final keyword
