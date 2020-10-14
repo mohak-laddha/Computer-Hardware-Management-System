@@ -21,6 +21,7 @@ class Stock extends comp
 	int qty[];
 	int price[];
 	int i=0,num=0;
+	
 	public void read()
 	{
 	System.out.println("\nEnter 1 for adding stock");
