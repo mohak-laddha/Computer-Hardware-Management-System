@@ -1,65 +1,22 @@
-//Constructor and Function Overloading
-
 import java.util.*;
+import java.util.Scanner;
 
-class Shop1
+abstract class comp
 {
-	Scanner sc = new Scanner(System.in);
-		
-	int id,qt,pr,g;
-	String na;
+	abstract void add_stock();
+}
 
-	Shop1(){}	// Default Constructor
+class Stock extends comp
+{
+	Scanner sc = new Scanner(System.in);	
+	final int g = 18;
 
-	Shop1(int id, String na, int qt, int pr)
+	void hello()
 	{
-		this.id = id;			//this Keyword
-		this.na = na;
-		this.qt = qt;
-		this.pr = pr;
-	}	
-
-
-	Shop1(int P_id, String Name, int Qty, int Price, int GST)	//Constructor Overloading
-	{
-		id = P_id;
-		na = Name;
-		qt = Qty;
-		pr = Price;
-		g = GST;
-	}	
-
-
-	static void fun1(int id, String n, int q, int p)
-	{	
-		System.out.println("");
-		System.out.println("Product_Id	" + "Name	" + "Quantity	" +  "Price");
-		System.out.print( id + "		" + n + "	" + q + "		" + p + "\n");
+		System.out.println("Super Class");
 	}
 
-	static void fun1(int id, String n, int q, int p, int g)		//Function Overloading
-	{	
-		System.out.println( id + "		" + n + "	" + q + "		" + p + "	" + g);
-		System.out.println("Function Overloading");
-	}
-
-
-	
-	void display1()
-	{
-		System.out.println("");
-		System.out.println("P_Id " + id +  "	Quantity " + qt + "	Name " + na + "	Price" + pr);	
-	}
-	
-	void display2()
-	{
-		System.out.println("P_Id " + id +  "	Quantity" + qt + "	Name " + na + "	Price " + pr + "	GST " + g);	
-		System.out.println("Constructor Overloading");
-	}
-
-
-
-	int product_id[];		//Initializing Variables
+	public int product_id[];
 	String name[];
 	int qty[];
 	int price[];
@@ -78,19 +35,36 @@ class Shop1
 		break;
 
 	case 1:
+		add_stock();
+		break;
+
+	default:
+		System.out.println("Wrong Choice!\n");
+		read();		
+	}
+	}
+
+	void add_stock()
+	{
 		System.out.println("You have entered one");
 		System.out.println("Enter the number of products you wants to enter: ");
-		num=sc.nextInt();
+		num=sc.nextInt()+1;
 		
 		product_id = new int[num];
 		name= new String[num];
-		price = new int[num];
 		qty = new int[num];
+		price = new int[num];
+		
 
-		for(i = 0; i < num; i++)
+		product_id[0] = 1000;
+		name[0] = "Keyboard";
+		qty[0] = 77;
+		price[0] = 850;
+
+		for(i = 1; i < num; i++)
 		{
 			System.out.println("");
-			System.out.printf("Enter product %d Details  ",i+1);
+			System.out.printf("Enter product Details  ");
 			System.out.println("");
 
 			System.out.println("Enter product_id: ");
@@ -103,59 +77,50 @@ class Shop1
 			qty[i]=sc.nextInt();
 
 			System.out.println("Enter Price of Product: ");
-			price[i]=sc.nextInt();
-			
-		}
-		break;
-
-	default:
-		System.out.println("Wrong Choice!\n");
-		read();		
-	}	
+			price[i]=sc.nextInt();	
+		}		
 	}
 
 
-	void display()
+	public void display()
 	{
-	System.out.println("Product_Id " + " Name  " + " Quantity " + " Price  " + "	" + " Added_by ");
-	for(i = 0;i < num;i++)
+	System.out.println("Product_Id	" + "Name	" + "Quantity	" + "Price	" + "GST");
+	for(i = 1;i < num;i++)
 	{
-		System.out.println("--------------------------------------------------------");
+		System.out.println("---------------------------------------------");
 
-		System.out.println(product_id[i] + "       " + name[i] + "       " + qty[i] + "       " + price[i] + "	" + company_name);
+		System.out.println(product_id[i] + "		" + name[i] + "		" + price[i] + "	" + qty[i] + "	" + g);
 	}
 	}
+}
 
-
-	static String company_name="GGWPC";		// Static
-	static void change()		//Static Function
+class Report extends Stock
+{	
+	void hello()
 	{
-		company_name = "XYZ Enterprises";
+		System.out.println("\nDerived Class");
 	}
 
-	static				//Static Block
-	{
-		System.out.println("Welcome to Computer Shop Management System");
+	
+	void display1()
+	{	
+		System.out.println("\nP_Id	"  +  "Name		"  + "Quantity	" + "Price" );	
+		System.out.println(product_id[0]+ "	" + name[0] + "	" + qty[0] + "	" + price[0]);
+
+		super.hello();
+		System.out.println("\n");		
 	}
+}
 
-
+class Shop1
+{
 	public static void main(String args[])
-	{
-		Shop1 sh1 = new Shop1(1001, "Mouse", 50, 250);
-		sh1.display1();
-
-		Shop1 sh2 = new Shop1(1002,"Keyboard", 70, 850, 18);	//Constructor Overloading
-		sh2.display2();
-
-		Shop1 sh3 = new Shop1();
-		sh3.fun1(1001, "Mouse", 50, 250);
-		sh3.fun1(1002, "Keyboard", 100, 850, 18);		//Function Overloading
-
-		Shop1 sh = new Shop1();		//Calling Default Constructor
-		sh.change();
-		sh.read();
-		sh.display();
-
+	{		
+		Report rep = new Report();
+		rep.add_stock();
+		rep.display1();
+		rep.display();	
+		rep.hello();
 		
 	}
 }
