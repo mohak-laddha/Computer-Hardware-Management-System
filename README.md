@@ -6,4 +6,6 @@ Q3_Shop1.java Contains Lab Q3 Constructor and Function Overloading
 
 Q4 Shop4.java contains use of static keyword
 
+Q6 Implementing this keyword and command line argument
+
 Q7 Implementing the concept of Inheritance, super, abstract, and final keyword
