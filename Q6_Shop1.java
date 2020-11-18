@@ -28,7 +28,6 @@ class Shop1
 		g = GST;
 	}	
 
-
 	static void fun1(int id, String n, int q, int p)
 	{	
 		System.out.println("");
