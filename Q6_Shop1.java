@@ -1,3 +1,4 @@
+//Q6
 import java.util.*;
 
 class Shop1
@@ -140,9 +141,7 @@ class Shop1
 	public static void main(String args[])
 	{
 		
-		System.out.println("Your first argument is: "+args[0]);  
-
-		Shop1 sh1 = new Shop1(1001, "Mouse", 50, 250);
+		Shop1 sh1 = new Shop1(1001, args[0], 50, 250);
 		sh1.display1();
 
 		Shop1 sh2 = new Shop1(1002,"Keyboard", 70, 850, 18);	//Constructor Overloading
