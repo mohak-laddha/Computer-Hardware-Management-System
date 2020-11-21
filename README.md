@@ -13,3 +13,7 @@ Q6 Implementing this keyword and command line argument
 Q7 Implementing the concept of Inheritance, super, abstract, and final keyword
 
 Q8 Implementing Package & Interface
+
+Q9 Implementing Exception Handling
+
+Q10 Implementing Multithreading
