@@ -1,10 +1,10 @@
 //10 Implementing multithreading
 
-import java.util.*;		//user defined package
+import java.util.*;		//In Built Package
 
 import myPackage.MyClass;	//import 'MyClass' class from myPackage
 import myPackage1.Login;	//import 'Login' class from myPackage1
-
+	//user defined package
 
 
 interface gst
@@ -109,8 +109,13 @@ class Stock implements gst 	//class that implements the interface
 
 
 
-class Shop1 extends Thread
+class Shop1 extends Thread implements Runnable
 {
+	public void run()
+	{
+		System.out.println("Thread has ended");
+	}
+
 	public static void main(String args[])
 	{	
 
@@ -138,7 +143,6 @@ class Shop1 extends Thread
 	catch (Exception e)
 	{
 		System.out.println("[" + e + "] Exception Occured");
-		//sterUser();
 	}
 	finally
 	{
