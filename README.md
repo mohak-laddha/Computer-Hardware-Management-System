@@ -17,3 +17,5 @@ Q8 Implementing Package & Interface
 Q9 Implementing Exception Handling
 
 Q10 Implementing Multithreading
+
+Q11 & Q12 Implementation of Generic and Collection
